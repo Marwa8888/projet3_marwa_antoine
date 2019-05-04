@@ -1,0 +1,4 @@
+[webservers]
+192.168.60.10
+[rundeckserver]
+192.168.60.11

@@ -1,0 +1,6 @@
+---
+# file: webservers.yml
+- become: yes
+  hosts: webservers
+  roles:
+    - apache

@@ -1,0 +1,7 @@
+---
+# file: appservers.yml
+- name: install rundeck
+  hosts: rundeckserver
+  become: yes
+  roles:
+    - rundeck

@@ -1,0 +1,41 @@
+---
+- name: install rundeck
+  yum: 
+     name: java-1.8.0-openjdk
+     state: present
+- name: télécharger rundeck 
+  yum: 
+    name: http://repo.rundeck.org/latest.rpm
+    state: present
+- name: install rundeck
+  yum: 
+     name: rundeck
+     state: present
+
+- name: downmoad plugin ansible-plugin-
+  get_url: 
+   url: https://github.com/Batix/rundeck-ansible-plugin/releases/download/2.0.2/ansible-plugin-2.0.2.jar
+   dest: /var/lib/rundeck/libext
+- lineinfile:
+    path: /etc/rundeck/framework.properties
+    regexp: '^framework.server.name'
+    line: 'framework.server.name = 192.168.60.11'
+- lineinfile:
+    path: /etc/rundeck/framework.properties
+    regexp: '^framework.server.hostname'
+    line: 'framework.server.name = 192.168.60.11'
+- lineinfile:
+    path: /etc/rundeck/framework.properties
+    regexp: '^framework.server.url '
+    line: 'framework.server.url = http://192.168.60.11:4440'
+- lineinfile:
+    path: /etc/rundeck/rundeck-config.properties
+    regexp: '^grails.serverURL '
+    line: 'grails.serverURL=http://192.168.60.11:4440'
+- name: activer comme service
+  service: 
+    name: rundeckd
+    state: started
+    enabled: yes
+
+
