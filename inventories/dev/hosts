@@ -2,3 +2,5 @@
 192.168.60.10
 [rundeckserver]
 192.168.60.11
+[tomcatserver]
+192.168.60.12

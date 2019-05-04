@@ -1,0 +1,7 @@
+---
+# file: appservers.yml
+- name: install tomcat
+  hosts: tomcatserver
+  become: yes
+  roles:
+    - tomcat
