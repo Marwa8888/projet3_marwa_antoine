@@ -1,0 +1,6 @@
+<node name="centos54" type="Node"
+    description="a centos host"
+    hostname="192.168.60.12"
+    username="vagrant"
+    />
+
