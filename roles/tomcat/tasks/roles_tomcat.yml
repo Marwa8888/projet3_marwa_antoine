@@ -30,8 +30,3 @@
   file: path="/opt/tomcat8" owner=tomcat group=tomcat state=directory recurse=yes
 - name: tomcat  | systemd
   template: src=tomcat.service dest=/etc/systemd/system/tomcat.service
-- name: tomcat  | restart
-  service:
-     name: tomcat
-     state: restarted
-

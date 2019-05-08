@@ -1,7 +1,6 @@
 ---
-# file: appservers.yml
-- name: install tomcat
+- name: TOMCAT  |  INSTALL
   hosts: tomcatserver
   become: yes
   roles:
-    - tomcat
+    - robertdebock.tomcat

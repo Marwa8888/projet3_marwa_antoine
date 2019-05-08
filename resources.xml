@@ -1,6 +1,11 @@
+<project>
 <node name="centos54" type="Node"
+    osFamily="unix"
     description="a centos host"
-    hostname="192.168.60.12"
+    hostname="192.168.60.12:8080"
     username="vagrant"
+    ssh-authentication="privatekey"
+    ssh-password-storage-path="/home/vagrant/.ssh/id_rsa"
     />
 
+</project>
